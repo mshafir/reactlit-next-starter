@@ -1,15 +1,13 @@
 import { Inputs } from "@/components/inputs";
+import { Box, Text } from "@radix-ui/themes";
+import { textPropDefs } from "@radix-ui/themes/props";
 import {
   DataFetchingPlugin,
   LayoutPlugin,
   Reactlit,
-  ReactlitStateSetter,
-  StateBase,
   useReactlitState,
 } from "@reactlit/core";
 import { Main } from "../components/main";
-import { Box, Text } from "@radix-ui/themes";
-import { textPropDefs } from "@radix-ui/themes/props";
 
 export default function Home() {
   const [appState, setAppState] = useReactlitState({
@@ -20,8 +18,8 @@ export default function Home() {
   return (
     <Main title="My App">
       <Reactlit
-        state={appState as StateBase}
-        setState={setAppState as ReactlitStateSetter<StateBase>}
+        state={appState}
+        setState={setAppState}
         plugins={[LayoutPlugin, DataFetchingPlugin] as const}
       >
         {async ({ display, view }) => {

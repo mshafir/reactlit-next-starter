@@ -3,6 +3,7 @@ import { Box, Button, Container, Flex, Text, Tooltip } from "@radix-ui/themes";
 import { useTheme } from "next-themes";
 import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
+import { ReactlitTag } from "./reactlit-tag";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,6 +72,8 @@ export function Main({
                   {children}
                 </Box>
               </Container>
+              <Box flexGrow={"1"} />
+              <ReactlitTag />
             </Flex>
           </Flex>
         </Box>
